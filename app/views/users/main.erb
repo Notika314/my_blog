@@ -1,5 +1,6 @@
 <div class="container">
-  <h1>Welcome to my blog, <%= User.find(session[:user_id]).name.capitalize %>!</h1>
+  <div id="main_page">
+  <h1 id="another_greeting" >Welcome to my blog, <%= User.find(session[:user_id]).name.capitalize %>!</h1>
   <ul>
    <% @posts.order(:created_at).each do |post| %>
     <li><h3 class="title"><%= post.title %></h3>
@@ -54,4 +55,5 @@
     <input type="submit">
     </form>
   </div>
+</div>
 </div>

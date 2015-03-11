@@ -1,7 +1,25 @@
-.container {
-  margin-left: 30px;
-  margin-top: 30px;
-  font-size: 20px;
+body {
+   background: url("https://s-media-cache-ak0.pinimg.com/originals/d1/1a/ab/d11aab5df1dd71eeb8ce2ed6f9e33268.jpg") no-repeat center center fixed;
+   background-size: cover;
+}
+#greeting {
+  padding-top: 30px;
+  font-size: 45px;
+  color: white;
+}
+#another_greeting {
+  padding-top: 30px;
+  color:  #CC0052;
+}
+#main_page {
+  background-color: #FFDBDB;
+}
+.signin, .signup {
+  float: right;
+  display: none;
+}
+  .container {
+  height: 1000px;
 }
 .index_buttons {
   font-size: 13px;
@@ -22,7 +40,7 @@
   margin-left: 30px;
   width: 60%;
   padding: 10px;
-  background-color: red;
+  background-color: #D6C2FF;
   font-size: 20px;
 }
 h1 {
@@ -30,7 +48,7 @@ h1 {
 }
 .com_field {
   margin-left: 60px;
-  background-color: grey;
+  background-color: #CCCCCC;
   width: 40%;
 }
 
@@ -59,10 +77,9 @@ h1 {
   margin-bottom: 50px;
 }
 .new_post {
-  background-color: yellow;
+  background-color: pink;
   margin-top: 70px;
   margin-left: 100px;
-  margin-bottom: 50px;
   width: 40%;
 }
 #magic_button {
@@ -74,4 +91,13 @@ h1 {
 
  .delete_post {
   font-size: 14px;
+ }
+ .butn {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+ }
+ .collapse {
+   background-color: #CCCCCC;
  }

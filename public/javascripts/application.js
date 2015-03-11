@@ -36,5 +36,18 @@ $(document).ready(function() {
     $(".edit_comment").show();
   });
 
+  $(".login").click(function() {
+    $("signin").show();
+    $(".signup").hide();
+  });
+
+
+  $(".register").click(function() {
+    $("signup").show();
+    $(".signin").hide();
+  });
+
+
+
 
 });
