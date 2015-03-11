@@ -1,6 +1,14 @@
-## Build your own Lightsaber / MVC Skeleton ##
+- As a user, I want to be able to sign in
+- As a user, I want to be able to create an account
+- As a user, I want to be able to create a new survey
+- As a user, I want to be able to view my surveys
+- As a user, I want to be able take a survey
+- As a user, I want to be able to make the survey not accessible to others
 
-Nightly updates will be posted to the [wiki](../../../phase-2-guide/wiki/lightsaber).  Check there nightly for your homework.
+Potentially:
+- As a user, I want to be able to choose a chart type for my surveys
 
--  Work work work
--  Nightly after completion of work - create a pull request from YOUR FORK to OUR master branch
+- Team Name :NeXTSRTEP
+- Team memebers: Trevor Nelson, Natali Bryzhatenko, Chris Selden
+
+![schema](/schema.png)

@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rack', '~> 1.5'
 gem 'sinatra'
-gem 'sinatra-contrib'
 
 gem 'pg'
 
@@ -10,8 +8,11 @@ gem 'activesupport'
 gem 'activerecord'
 
 gem 'rake'
+gem 'shotgun'
 
 gem 'bcrypt'
+
+gem 'faker'
 
 group :test do
   gem 'rspec'

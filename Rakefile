@@ -24,7 +24,7 @@ namespace :generate do
 
     name     = ENV['NAME'].camelize
     filename = "%s_%s.rb" % [Time.now.strftime('%Y%m%d%H%M%S'), ENV['NAME'].underscore]
-    path     = APP_ROOT.join('db', 'migrations', filename)
+    path     = APP_ROOT.join('db', 'migrate', filename)
 
     if File.exist?(path)
       raise "ERROR: File '#{path}' already exists"
@@ -60,7 +60,7 @@ namespace :db do
 
   desc "Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
   task :migrate do
-    ActiveRecord::Migrator.migrations_paths << File.dirname(__FILE__) + 'db/migrations'
+    ActiveRecord::Migrator.migrations_paths << File.dirname(__FILE__) + 'db/migrate'
     ActiveRecord::Migration.verbose = ENV["VERBOSE"] ? ENV["VERBOSE"] == "true" : true
     ActiveRecord::Migrator.migrate(ActiveRecord::Migrator.migrations_paths, ENV["VERSION"] ? ENV["VERSION"].to_i : nil) do |migration|
       ENV["SCOPE"].blank? || (ENV["SCOPE"] == migration.scope)
@@ -76,7 +76,7 @@ namespace :db do
   task :seed do
     require APP_ROOT.join('db', 'seeds.rb')
   end
-  
+
   namespace :test do
     desc "Migrate test database"
     task :prepare do
