@@ -1,0 +1,7 @@
+<div class="container">
+  <form action="/comment/<%= @comment.id %>" method="POST"><br>
+      <input type="hidden" name="_method" value="PUT">
+      <textarea name="body" placeholder="<%= @comment.body %>"></textarea>
+      <input class="index_buttons" type="submit" value="Update">
+  </form>
+</div>

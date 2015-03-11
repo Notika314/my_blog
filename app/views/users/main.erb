@@ -9,12 +9,18 @@
               <h5 class="com_head">comments:</h5>
               <ul>
                 <% post.comments.all.each do |comment| %>
-                  <li><p class="comment"><%= comment.body %></p></li>
+                  <li><p class="comment"><%= comment.body %></p>
+                    <% if comment.user_id == session[:user_id] %>
+                      <a href="/comment/<%= comment.id %>/delete"><span class="glyphicon glyphicon-trash"></span></a>
+                      <a href="/comment/<%= comment.id %>/edit"><button class="small-btn" type="button">edit</button></a>
+                    <% end %>
+
+                  </li>
                 <% end %>
               </ul>
             </div>
           <% end %>
-          <form action='/comments/create' method='POST'>
+          <form class="new_comment_form" action='/comments/create' method='POST'>
           <label>Add comment</label><br>
           <input type="hidden" name="post_id" value= "<%= post.id %>" />
           <textarea name="body" placeholder="your comment"></textarea>
