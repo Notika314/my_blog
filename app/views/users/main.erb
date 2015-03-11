@@ -1,1 +1,29 @@
+<div class="container">
+  <h1>Welcome to Natalia's blog</h1>
+  <ul>
+   <% @posts.each do |post| %>
+    <li><h3 class="title"><%= post.title %></h3>
+        <p class="body"><%= post.body %></p>
+          <% if post.comments.all.count > 0  %>
+            <div class="com_field">
+              <h5 class="com_head">comments:</h5>
+              <ul>
+                <% post.comments.all.each do |comment| %>
+                  <li><p class="comment"><%= comment.body %></p></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <form action='/comments/create' method='POST'>
+          <label>Add comment</label><br>
+          <input type="hidden" name="post_id" value= "<%= post.id %>" />
+          <textarea name="body" placeholder="your comment"></textarea>
+          <input type="submit">
+          </form>
+   </li>
+  <% end %>
+ </ul>
 
+
+
+</div>
