@@ -1,0 +1,16 @@
+<nav class="navbar navbar-static-top">
+  <div class="collapse navbar-collapse">
+  <ul class="nav navbar-nav navbar-right">
+    <% if session[:user_id] %>
+      <li><a href="/authentication/logout">Log Out</a></li>
+    <% else %>
+      <li><a href="/authentication/login" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+      <li><a href="/authentication/signup" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
+    <% end %>
+  </ul>
+
+
+  </div>
+
+
+</nav>

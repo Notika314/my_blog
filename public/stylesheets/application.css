@@ -52,3 +52,19 @@ h1 {
   height: 100px;
   width: 20px;
 }
+.new_post_form {
+  display: none;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 50px;
+}
+.new_post {
+  background-color: yellow;
+  margin-top: 70px;
+  margin-left: 100px;
+  margin-bottom: 50px;
+  width: 40%;
+}
+#magic_button {
+  margin: 20px;
+}
