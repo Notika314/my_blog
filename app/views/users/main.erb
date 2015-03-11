@@ -1,14 +1,14 @@
 <div class="container">
   <h1>Welcome to Natalia's blog</h1>
   <ul>
-   <% @posts.each do |post| %>
+   <% @posts.order(:created_at).each do |post| %>
     <li><h3 class="title"><%= post.title %></h3>
         <p class="body"><%= post.body %></p>
           <% if post.comments.all.count > 0  %>
             <div class="com_field">
               <h5 class="com_head">comments:</h5>
               <ul>
-                <% post.comments.all.each do |comment| %>
+                <% post.comments.order(:created_at).each do |comment| %>
                   <li><p class="comment"><%= comment.body %></p>
                     <% if comment.user_id == session[:user_id] %>
                       <a href="/comment/<%= comment.id %>/delete"><span class="glyphicon glyphicon-trash"></span></a>
@@ -29,7 +29,14 @@
    </li>
   <% end %>
  </ul>
-
-
-
+  <div class="new_post">
+    <button id="magic_button" type="button" id="magic_btn" >Create new post</button>
+    <form  class="new_post_form" action='../posts/create' method='POST'>
+      <label>title</label><br>
+    <input type="text" name="title" placeholder="title" /><br>
+    <label>your post:</label><br>
+    <textarea name="body" placeholder="your post"></textarea>
+    <input type="submit">
+    </form>
+  </div>
 </div>

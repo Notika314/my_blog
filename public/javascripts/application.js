@@ -14,6 +14,10 @@ $(document).ready(function() {
              console.log(response)
               }
     })
-  })
+  });
+
+  $("#magic_button").click(function() {
+    $(".new_post_form").show();
+  });
 
 });

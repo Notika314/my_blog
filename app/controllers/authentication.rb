@@ -8,7 +8,7 @@ end
 
 get "/authentication/logout" do
   session[:user_id] = nil
-  redirect back
+  redirect "/"
 end
 
 post "/authentication/signin" do
