@@ -68,3 +68,10 @@ h1 {
 #magic_button {
   margin: 20px;
 }
+ .edit_comment {
+  display: none;
+ }
+
+ .delete_post {
+  font-size: 14px;
+ }

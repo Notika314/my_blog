@@ -22,8 +22,8 @@ post "/authentication/signin" do
 end
 
 post "/authentication/register_user" do
+  "#{params}"
   if params[:password] == params[:password_confirm]
-    "true"
   user = User.create(name: params[:name], email: params[:email], password: params[:password])
   session[:user_id] = user.id
   redirect "/users/main"

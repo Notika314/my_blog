@@ -1,18 +1,33 @@
 <div class="container">
-  <h1>Welcome to Natalia's blog</h1>
+  <h1>Welcome to my blog, <%= User.find(session[:user_id]).name.capitalize %>!</h1>
   <ul>
    <% @posts.order(:created_at).each do |post| %>
     <li><h3 class="title"><%= post.title %></h3>
         <p class="body"><%= post.body %></p>
+        <% if post.user_id == session[:user_id] %>
+          <form class="delete_post" action="/post/<%= post.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete post">
+          </form>
+        <% end %>
           <% if post.comments.all.count > 0  %>
             <div class="com_field">
               <h5 class="com_head">comments:</h5>
               <ul>
                 <% post.comments.order(:created_at).each do |comment| %>
-                  <li><p class="comment"><%= comment.body %></p>
+                  <li class="comment"><p><%= comment.body %></p>
                     <% if comment.user_id == session[:user_id] %>
-                      <a href="/comment/<%= comment.id %>/delete"><span class="glyphicon glyphicon-trash"></span></a>
-                      <a href="/comment/<%= comment.id %>/edit"><button class="small-btn" type="button">edit</button></a>
+
+                      <button id="new_post_button" type="button" >Edit</button>
+                      <form class="edit_comment" action="/comment/<%= comment.id %>" method="POST"><br>
+                          <input type="hidden" name="_method" value="PUT">
+                          <textarea name="body" placeholder="<%= comment.body %>"></textarea>
+                          <input class="index_buttons" type="submit" value="Update">
+                      </form>
+                      <form class="delete_comment" action="/comment/<%= comment.id %>" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" value="Delete">
+                      </form>
                     <% end %>
 
                   </li>
