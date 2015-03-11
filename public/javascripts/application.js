@@ -13,11 +13,28 @@ $(document).ready(function() {
       error: function(response) {
              console.log(response)
               }
-    })
+    });
+  });
+
+  $(".delete_comment").submit(function(event) {
+    event.preventDefault();
+    var $target = $(event.target);
+    $.ajax({
+      type: "DELETE",
+      url: $target.attr("action"),
+    }).done(function(response) {
+       $target.closest('.comment').remove()
+    });
   });
 
   $("#magic_button").click(function() {
     $(".new_post_form").show();
   });
+
+
+  $("#new_post_button").click(function() {
+    $(".edit_comment").show();
+  });
+
 
 });

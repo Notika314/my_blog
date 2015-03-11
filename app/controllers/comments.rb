@@ -12,11 +12,14 @@ post "/comments/create.json" do
   comment.to_json
 end
 
-get "/comment/:id/delete" do
-  comment = Comment.find(params[:id])
-  comment.destroy
-  redirect back
-  # comment = Comment.find(params[:id])
+delete '/comment/:id' do
+  @comment = Comment.find(params[:id])
+  @comment.destroy
+  if request.xhr?
+   "deleted"
+  else
+    redirect "/users/main"
+  end
 end
 
 get "/comment/:id/edit" do
@@ -29,3 +32,4 @@ put "/comment/:id" do
   @comment.update(body: params[:body])
   redirect "/users/main"
 end
+
