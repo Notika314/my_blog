@@ -56,6 +56,7 @@ body {
   padding: 10px;
   background-color: #D6C2FF;
   font-size: 20px;
+
 }
 h1 {
   text-align: center;
@@ -98,13 +99,18 @@ h1 {
   margin-bottom: 50px;
 }
 .new_post {
-  background-color: pink;
   margin-top: 70px;
   margin-left: 100px;
   width: 40%;
 }
 #magic_button {
+  background-color: #FFDBDB;
   margin: 20px;
+  border-color: #ffdbdb;
+  font-size: 30px;
+  font-family: cursive;
+  font-weight: bolder;
+  color: #1F1F5C;
 }
  .edit_comment {
   display: none;

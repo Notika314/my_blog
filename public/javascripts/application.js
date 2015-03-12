@@ -26,6 +26,10 @@ $(document).ready(function() {
        $target.closest('.comment').remove()
     });
   });
+  $("#main_page").animate({height: '0px', opacity: '0.2'}, 600);
+ $("#main_page").animate({height: '400px', opacity: '0.3'}, 600);
+ $("#main_page").animate({height: '1000px', opacity: '0.6'}, 600);
+ $("#main_page").animate({height: '2000px', opacity: '0.9'}, 600);
 
   $("#magic_button").click(function() {
     $("#magic_button").hide();
@@ -47,11 +51,5 @@ $(document).ready(function() {
     $("signup").show();
     $(".signin").hide();
   });
-
-$("#main_page").animate({height: '0px', opacity: '0.2'}, "slow");
-$("#main_page").animate({height: '400px', opacity: '0.3'}, "slow");
-$("#main_page").animate({height: '1000px', opacity: '0.6'}, "slow");
-$("#main_page").animate({height: '2000px', opacity: '0.9'}, "slow");
-
 
 });
